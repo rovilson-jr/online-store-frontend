@@ -1,0 +1,12 @@
+<section class="product-list">
+    <div class="product-list__card" *ngFor="let product of products">
+        <a routerLink="/products/{{ product.id }}" class="product-list__link">
+            <img src="https://via.placeholder.com/250">
+            <h2 class="product-item__name">{{product.description}}</h2>
+            <p class="product-item__price">{{ product.price | currency }}</p>
+            <p class="product-item__price-description">{{ product.priceDescription }}</p>
+            <button class="product-item__buy-button" type="button">Buy</button>
+            
+        </a>
+    </div>
+</section>

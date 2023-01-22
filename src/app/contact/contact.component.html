@@ -1,0 +1,106 @@
+<h2 class="contact__title">Contact</h2>
+<section class="contact__container">
+    <form class="contact-form" [formGroup]="formContact" (ngSubmit)="sendForm()">
+        <input 
+            type="text" 
+            placeholder="Name" 
+            formControlName="name"
+            [class.valid]="formContact.controls['name'].valid"
+            [class.invalid]="formContact.controls['name'].invalid && 
+            (formContact.controls['name'].touched)"
+            
+        >
+        <div *ngIf="formContact.controls['name'].invalid && 
+        (formContact.controls['name'].touched)">
+            <small class="error-message" *ngIf="formContact.controls['name'].hasError('minlength')">
+                Insert at least 3 characters
+            </small>
+            <small class="error-message" *ngIf="formContact.controls['name'].hasError('required')">
+                Required
+            </small>
+        </div>
+
+
+        <input type="text" placeholder="Subject"
+        formControlName="subject"
+        [class.valid]="formContact.controls['subject'].valid"
+        [class.invalid]="formContact.controls['subject'].invalid && 
+        (formContact.controls['subject'].touched)">
+
+        <div *ngIf="formContact.controls['subject'].invalid && 
+        (formContact.controls['subject'].touched)">
+            <small class="error-message" *ngIf="formContact.controls['subject'].hasError('minlength')">
+                Insert at least 5 characters
+            </small>
+            <small class="error-message" *ngIf="formContact.controls['subject'].hasError('required')">
+                Required
+            </small>
+        </div>
+
+
+        <input type="tel" placeholder="+00 (000) 000-0000"
+        formControlName="telephone"
+        [class.valid]="formContact.controls['telephone'].valid"
+        [class.invalid]="formContact.controls['telephone'].invalid && 
+        (formContact.controls['telephone'].touched)"
+        >
+
+        <div *ngIf="formContact.controls['telephone'].invalid && 
+        (formContact.controls['telephone'].touched)">
+            <small class="error-message" *ngIf="formContact.controls['telephone'].hasError('minlength')">
+                Insert at least 8 characters
+            </small>
+            <small class="error-message" *ngIf="formContact.controls['telephone'].hasError('required')">
+                Required
+            </small>
+        </div>
+
+
+
+        <input type="email" placeholder="Email"
+        formControlName="email"
+        [class.valid]="formContact.controls['email'].valid"
+        [class.invalid]="formContact.controls['email'].invalid && 
+        (formContact.controls['email'].touched)"
+        
+        >
+
+        <div *ngIf="formContact.controls['email'].invalid && 
+        (formContact.controls['email'].touched)">
+            <small class="error-message" *ngIf="formContact.controls['email'].hasError('email')">
+                Insert a valid email
+            </small>
+            <small class="error-message" *ngIf="formContact.controls['email'].hasError('required')">
+                Required
+            </small>
+        </div>
+
+
+        <textarea 
+        maxlength="300" 
+        placeholder="Type your message..."
+        rows="4"
+        formControlName="message"
+        [class.valid]="formContact.controls['message'].valid"
+        [class.invalid]="formContact.controls['message'].invalid && 
+        (formContact.controls['message'].touched)"
+        ></textarea>
+
+        <div *ngIf="formContact.controls['message'].invalid && 
+        (formContact.controls['message'].touched)">
+            <small class="error-message" *ngIf="formContact.controls['message'].hasError('minlength')">
+                Insert at least 20 characters
+            </small>
+            <small class="error-message" *ngIf="formContact.controls['message'].hasError('required')">
+                Required
+            </small>
+        </div>
+
+
+        <button [disabled]="formContact.invalid" type="submit">Send</button>
+    </form>
+    <address>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14567280.97592093!2d44.5469489!3d-77.1237346!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1674345561116!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p>Antarctica</p>
+    </address>
+</section>

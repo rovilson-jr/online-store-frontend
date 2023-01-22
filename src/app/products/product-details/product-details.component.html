@@ -1,0 +1,19 @@
+<section class="product__container">
+    <div class="product-image__container">
+        <img src="https://via.placeholder.com/350">
+    </div>
+    <div class="product-description__container">
+        <h2 class="product__name">{{ product?.description }}</h2>
+        <h3 class="product__price">{{ product?.price | currency }}</h3>
+        <p>In stock:</p>
+        <label>
+            Quantity:
+            <input type="number" [(ngModel)]="quantity" min="1">
+            units
+        </label>
+        <p class="product__availability">
+            {{ product?.stockQuantity }} units
+        </p>
+        <button (click)="addToCart()">Add to shopping cart</button>
+    </div>
+</section>

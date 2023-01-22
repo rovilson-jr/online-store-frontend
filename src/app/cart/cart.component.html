@@ -1,0 +1,18 @@
+<h2 class="cart-title">Shopping Cart</h2>
+<div *ngIf="itemsCart.length > 0; else noProduct">
+    <ul>
+        <li *ngFor="let itemCart of itemsCart">
+            <img src="https://via.placeholder.com/100">
+            <p>{{ itemCart.description }}</p>
+            <p>{{ itemCart.price | currency }}</p>
+            <label>
+                Quantity:
+                <input type="number" [(ngModel)]="itemCart.quantity" min="1" (change)="calculateTotal()">
+            </label>
+            <button class="remove-button" (click)="removeFromCart(itemCart.id)"><i class="fa-solid fa-xmark"></i></button>
+        </li>
+    </ul>
+    <h2 class="cart-total">Total: {{ total | currency }}</h2>
+    <button class="buy-button" (click)="pay()">Pay</button>
+</div>
+<ng-template #noProduct>You don't have ant product on your shopping card</ng-template>

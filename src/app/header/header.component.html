@@ -1,0 +1,27 @@
+<header class="main-header">
+    <h1 class="main-header__title">
+        <span class="main-header__title--blue">Online</span><span class="main-header__title--orange">Store</span>
+    </h1>
+    <div class="container-menu">
+        <nav class="main-header__menu">
+            <ul>
+                <li>
+                    <a routerLink="products">Products</a>
+                </li>
+                <li>
+                    <a routerLink="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Shopping Cart
+                        <span class="badge-cart">{{ cartService.getCart().length }}</span>
+                    </a>
+                </li>
+                <li><a routerLink="contact">Contact</a></li>
+                <li><a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+        </nav>
+        <app-search-bar></app-search-bar>
+    </div>
+</header>
